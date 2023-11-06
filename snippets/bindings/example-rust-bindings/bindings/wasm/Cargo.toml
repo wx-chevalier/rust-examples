@@ -1,0 +1,22 @@
+[package]
+authors = ["Andy Balaam <andybalaam@artificialworlds.net>"]
+edition = "2021"
+homepage = "https://gitlab.com/andybalaam/example-rust-bindings-rust"
+repository = "https://gitlab.com/andybalaam/example-rust-bindings-rust"
+description = "WASM bindings for example-rust-bindings-rust"
+license = "Apache-2.0"
+name = "wasm"
+version = "0.1.0"
+rust-version = "1.60"
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ['-Oz']
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+js-sys = "0.3.49"
+wasm-bindgen = "0.2.80"
+wasm-bindgen-futures = "0.4.30"
+example-rust-bindings = { path = "../../crates/example-rust-bindings" }

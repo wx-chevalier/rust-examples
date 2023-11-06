@@ -1,0 +1,4 @@
+/target/
+/bindings/ffi/.cargo/
+/bindings/wasm/pkg/
+/bindings/wasm/node_modules/

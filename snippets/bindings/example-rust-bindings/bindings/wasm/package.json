@@ -1,0 +1,35 @@
+{
+    "name": "example-rust-bindings-wasm",
+    "version": "0.1.0",
+    "homepage": "https://gitlab.com/andybalaam/example-rust-bindings",
+    "description": "WASM bindings for example-rust-bindings",
+    "license": "Apache-2.0",
+    "collaborators": [
+        "Andy Balaam <andybalaam@artificialworlds.net>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.com/andybalaam/example-rust-bindings"
+    },
+    "main": "example-rust-bindings.js",
+    "types": "pkg/example-rust-bindings.d.ts",
+    "files": [
+        "pkg/example-rust-bindings_bg.wasm",
+        "pkg/example-rust-bindings_bg.wasm.d.ts",
+        "pkg/example-rust-bindings.d.ts",
+        "pkg/example-rust-bindings.js"
+    ],
+    "devDependencies": {
+        "wasm-pack": "^0.10.2",
+        "jest": "^28.1.0",
+        "typedoc": "^0.22.17"
+    },
+    "engines": {
+        "node": ">= 10"
+    },
+    "scripts": {
+        "build": "RUSTFLAGS='-C opt-level=z' wasm-pack build --release --target web --out-name example-rust-bindings --out-dir ./pkg",
+        "test": "jest --verbose",
+        "doc": "typedoc --tsconfig ."
+    }
+}

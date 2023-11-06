@@ -1,0 +1,24 @@
+[package]
+authors = ["Andy Balaam <andybalaam@artificialworlds.net>"]
+edition = "2021"
+homepage = "https://gitlab.com/andybalaam/example-rust-bindings-rust"
+repository = "https://gitlab.com/andybalaam/example-rust-bindings-rust"
+description = "Swift and Kotlin bindings for example-rust-bindings-rust"
+license = "Apache-2.0"
+name = "example-rust-bindings-ffi"
+version = "0.1.0"
+rust-version = "1.60"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+# Keep the uniffi version here in sync with the installed version of
+# uniffi-bindgen that is called from
+# ../../examples/example-android/app/build.gradle
+uniffi = "0.19.2"
+uniffi_macros = "0.19.2"
+example-rust-bindings = { path = "../../crates/example-rust-bindings" }
+
+[build-dependencies]
+uniffi_build = { version = "0.19.2", features = ["builtin-bindgen"] }

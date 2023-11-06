@@ -1,0 +1,7 @@
+namespace my_rust_code {
+    MyClass create_myclass();
+};
+
+interface MyClass {
+    string my_method();
+};

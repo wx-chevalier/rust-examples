@@ -1,0 +1,16 @@
+[package]
+authors = ["Andy Balaam <andybalaam@artificialworlds.net>"]
+edition = "2021"
+homepage = "https://gitlab.com/andybalaam/example-rust-bindings-rust"
+repository = "https://gitlab.com/andybalaam/example-rust-bindings-rust"
+description = "Model code to power a WYSIWYG editor for Matrix"
+license = "Apache-2.0"
+name = "example-rust-bindings"
+version = "0.1.0"
+rust-version = "1.60"
+
+[features]
+
+[dependencies]
+
+[dev-dependencies]

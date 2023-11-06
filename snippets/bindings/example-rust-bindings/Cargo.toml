@@ -1,0 +1,13 @@
+[workspace]
+members = [
+    "bindings/ffi",
+    "bindings/wasm",
+    "crates/example-rust-bindings",
+]
+
+[profile.release]
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = 'abort'
+debug = false

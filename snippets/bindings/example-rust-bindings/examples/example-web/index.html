@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    </head>
+    <body>
+        <p id="pid">This text is in HTML</p>
+
+        <script type="module">
+            import init, { create_myclass }
+                from './generated/example-rust-bindings.js';
+
+            async function run() {
+                await init();
+                const m = create_myclass();
+                document.getElementById("pid").innerText = m.my_method();
+            }
+
+            run();
+        </script>
+    </body>
+</html>
